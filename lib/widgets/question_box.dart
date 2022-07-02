@@ -3,7 +3,7 @@ import '../models/question.dart';
 
 class QuestionBox extends StatelessWidget {
   final int _index;
-  final List<Map<int, List<Question>>> _questions;
+  final List<List<Question>> _questions;
   final Function _actionButton;
 
   const QuestionBox(this._index, this._questions, this._actionButton,
@@ -24,10 +24,9 @@ class QuestionBox extends StatelessWidget {
                 height: 8,
               ),
               ElevatedButton(
-                onPressed: () =>
-                    _actionButton(_questions[_index][_index]![0].value),
+                onPressed: () => _actionButton(_questions[_index][0].value),
                 child: Text(
-                  _questions[_index][_index]![0].label,
+                  _questions[_index][0].label,
                   style: const TextStyle(color: Colors.black, fontSize: 18),
                 ),
                 style: ButtonStyle(
@@ -48,10 +47,9 @@ class QuestionBox extends StatelessWidget {
                 height: 8,
               ),
               ElevatedButton(
-                onPressed: () =>
-                    _actionButton(_questions[_index][_index]![1].value),
+                onPressed: () => _actionButton(_questions[_index][1].value),
                 child: Text(
-                  _questions[_index][_index]![1].label,
+                  _questions[_index][1].label,
                   style: const TextStyle(color: Colors.black, fontSize: 18),
                 ),
                 style: ButtonStyle(

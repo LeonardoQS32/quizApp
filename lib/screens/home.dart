@@ -14,38 +14,26 @@ class Home extends StatefulWidget {
 class HomeState extends State<Home> {
   final _questions = [
     // Lista de perguntas
-    {
-      0: [
-        Question("O proximo ano bisexto é em 2024", 1),
-        Question("O proximo ano bisexto é em 2022", 0)
-      ]
-    },
-    {
-      1: [
-        Question("A planta da maconha pode atingir no máximo 6 metros", 1),
-        Question("A planta da maconha pode atingir no máximo 3 metros", 0)
-      ]
-    },
-    {
-      2: [
-        Question(
-            "O time do Cuiaba é um dos times que mais foram rebaixados", 0),
-        Question(
-            "O time do Cuiaba é um dos times que nunca foram rebaixados", 1)
-      ]
-    },
-    {
-      3: [
-        Question("Cacarola é um tipo de panela", 1),
-        Question("Cacarola é um tipo de fruta", 0)
-      ]
-    },
-    {
-      4: [
-        Question("Vasco é time de serie A", 0),
-        Question("Vasco é time de serie B", 1)
-      ]
-    }
+    [
+      Question("O proximo ano bisexto é em 2024", 1),
+      Question("O proximo ano bisexto é em 2022", 0)
+    ],
+    [
+      Question("A planta da maconha pode atingir no máximo 6 metros", 1),
+      Question("A planta da maconha pode atingir no máximo 3 metros", 0)
+    ],
+    [
+      Question("O time do Cuiaba é um dos times que mais foram rebaixados", 0),
+      Question("O time do Cuiaba é um dos times que nunca foram rebaixados", 1)
+    ],
+    [
+      Question("Cacarola é um tipo de panela", 1),
+      Question("Cacarola é um tipo de fruta", 0)
+    ],
+    [
+      Question("Vasco é time de serie A", 0),
+      Question("Vasco é time de serie B", 1)
+    ],
   ];
 
   int points = 0; // Variável para marcar a quantidade de perguntas certas
@@ -83,12 +71,10 @@ class HomeState extends State<Home> {
   }
 
   String textAppbar() {
-    String x = "";
-    if (_index >= 5) {
-      x = 'Fim';
+    if (_index >= _questions.length) {
+      return 'Fim';
     } else {
-      x = 'Quiz App';
+      return 'Quiz App';
     }
-    return x;
   }
 }
