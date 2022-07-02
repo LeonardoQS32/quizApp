@@ -16,32 +16,34 @@ class HomeState extends State<Home> {
     // Lista de perguntas
     {
       0: [
-        Question("O proximo ano bisexto eh em 2024", 1),
-        Question("O proximo ano bisexto eh em 2022", 0)
+        Question("O proximo ano bisexto é em 2024", 1),
+        Question("O proximo ano bisexto é em 2022", 0)
       ]
     },
     {
       1: [
-        Question("A planta da maconha pode atingir no maximo 6 metros", 1),
-        Question("A planta da maconha pode atingir no maximo 3 metros", 0)
+        Question("A planta da maconha pode atingir no máximo 6 metros", 1),
+        Question("A planta da maconha pode atingir no máximo 3 metros", 0)
       ]
     },
     {
       2: [
-        Question("Davi gostava de tocar harpa", 1),
-        Question("Davi gostava de tocar flauta", 0)
+        Question(
+            "O time do Cuiaba é um dos times que mais foram rebaixados", 0),
+        Question(
+            "O time do Cuiaba é um dos times que nunca foram rebaixados", 1)
       ]
     },
     {
       3: [
-        Question("Cacarola eh um tipo de panela", 1),
-        Question("Cacarola eh um tipo de fruta", 0)
+        Question("Cacarola é um tipo de panela", 1),
+        Question("Cacarola é um tipo de fruta", 0)
       ]
     },
     {
       4: [
-        Question("Vasco eh time de serie B", 1),
-        Question("Vasco eh time de serie A", 0)
+        Question("Vasco é time de serie A", 0),
+        Question("Vasco é time de serie B", 1)
       ]
     }
   ];
@@ -53,9 +55,9 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Quiz App",
-          style: TextStyle(fontSize: 28),
+        title: Text(
+          textAppbar(),
+          style: const TextStyle(fontSize: 28),
         ),
         centerTitle: true,
       ),
@@ -78,5 +80,15 @@ class HomeState extends State<Home> {
       points = 0;
       _index = 0;
     });
+  }
+
+  String textAppbar() {
+    String x = "";
+    if (_index >= 5) {
+      x = 'Fim';
+    } else {
+      x = 'Quiz App';
+    }
+    return x;
   }
 }
